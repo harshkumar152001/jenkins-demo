@@ -21,7 +21,12 @@ public class MyController {
 	{
 		return "hello";
 	}
-	
+	@GetMapping("/hi")
+	@PreAuthorize("hasAuthority('ROLE_ADMIN')")
+	public String sayHello()
+	{
+		return "hello";
+	}
 	
 	@GetMapping("/admin")
 	@PreAuthorize("hasAuthority('ROLE_ADMIN')")
